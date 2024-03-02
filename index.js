@@ -14,26 +14,33 @@ const tasksContainer = document.getElementById("tasks-container");
 
 let editStatus = false;
 let id = "";
-const fragment = window.location.hash.substring(1); 
 
 window.addEventListener("DOMContentLoaded", async (e) => {
-  // const querySnapshot = await getTasks();
-  // querySnapshot.forEach((doc) => {
-  //   console.log(doc.data());
-  // });
-  
-
   onGetTasks((querySnapshot) => {
     tasksContainer.innerHTML = "";
-
     querySnapshot.forEach((doc) => {
       const task = doc.data();
-
+      var asist = "";
+      switch (task.asis) {
+        case "1":
+          asist = "Si"
+          break;
+        case "2":
+          asist = "No"
+          break;
+        case "3":
+          asist = "Puede ser.."
+          break;
+        default:
+          break;
+      }
       tasksContainer.innerHTML += `
       <div class="card card-body mt-2 border-primary">
-    <h3 class="h5">Familia: ${task.familia}</h3>
+    <h3 class="h5">${task.tipo}: ${task.familia}</h3>
     <p>No. invitados: ${task.invitados}</p>
     <p>Mesa: ${task.mesa}</p>
+    <p>Asistecia: ${asist}</p>
+    <p>Invitacion:<a href="https://e510-2806-264-2440-2ca-38b8-f994-bcee-354e.ngrok-free.app/Invitacion.html?fun&fam=${task.familia}">https://e510-2806-264-2440-2ca-38b8-f994-bcee-354e.ngrok-free.app/Invitacion.html?fun&fam=${task.familia}</a></p>
     <div>
       <button class="btn btn-primary btn-delete" data-id="${doc.id}">
         🗑 Eliminar
@@ -62,10 +69,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       btn.addEventListener("click", async (e) => {
         try {
           const doc = await getTask(e.target.dataset.id);
-          const task = doc.data();
-          taskForm["task-title"].value = task.title;
-          taskForm["task-description"].value = task.description;
-
+          taskForm["familia"].value = doc.familia;
+          taskForm["mesa"].value = doc.mesa;
+          taskForm["familia"].setAttribute('data-id', e.target.dataset.id);
           editStatus = true;
           id = doc.id;
           taskForm["btn-task-form"].innerText = "Update";
@@ -83,23 +89,28 @@ taskForm.addEventListener("submit", async (e) => {
   const familia = taskForm["familia"];
   const invitados = taskForm["invitados"];
   const mesa = taskForm["mesa"];
+  const tipoInv = taskForm["tipo"];
+  const asis = taskForm["asis"];
 
   try {
     if (!editStatus) {
-      await saveTask(familia.value, invitados.value, mesa.value);
+      await saveTask(familia.value, invitados.value, mesa.value, tipoInv.value,asis.value);
     } else {
+      id = familia.getAttribute('data-id');
       await updateTask(id, {
-        title: title.value,
-        description: description.value,
+        familia: familia.value,
+        invitados: invitados.value,
+        mesa: mesa.value,
+        tipoInv : tipoInv.value,
+        asis:asis.value,
       });
 
       editStatus = false;
       id = "";
       taskForm["btn-task-form"].innerText = "Save";
     }
-    location.reload();
-    //taskForm.reset();
-    title.focus();
+    taskForm.reset();
+    familia.focus();
     
 
   } catch (error) {

@@ -19,8 +19,8 @@
     <meta property="og:image" content="https://github.com/JotaRaffalli/boda-prima/blob/master/img/eng_pics/Valen%26Ribe/eng3.JPG">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32-valen&ribe.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16-valen&ribe.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logohref.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/logohref.png">
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
     <link rel="stylesheet" href="css/normalize.min.css">
@@ -32,29 +32,44 @@
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    
+    <style>
+        .imagen-responsive {
+            max-width: 100%; /* La imagen no será más ancha que el contenedor */
+            height: auto; /* La altura se ajusta automáticamente para mantener la relación de aspecto */
+            overflow: hidden; /* Evita que la imagen sobresalga del contenedor */
+        }
+        
+        .imagen-responsive img {
+            width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+            height: auto; /* La altura se ajusta automáticamente para mantener la relación de aspecto */
+            display: block; /* Asegura que la imagen se muestre como un bloque */
+        }
+        #bottom-div {
+            align-self: flex-end;
+        }
+    </style>
 </head>
 <body id="top">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
-<section class="hero">
+<section class="hero" >
+    
     <section class="navigation">
         <header>
             <div class="header-content">
-                <div class="logo"><a href="#"><img src="img/logo-valen&ribe.png" alt="Logo"></a></div>
+                <div class="logo"><a href="#"><img src="img/logohref.png" alt="Logo"></a></div>
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
                             <!-- <li><a href="#intro">Cómo nos con</a></li> -->
                             <!-- <li><a href="#events">Events</a></li> -->
-                            <li><a href="#instagram">Instagram</a></li>
-                            <li><a href="#eng-pics">Recuerdos</a></li>
-                            <li class="hidden-sm hidden-xs"><a href="#video-bg">Lugar</a></li>
+                            <li><a href="#ceremonia">Ceremonia</a></li>
+                            <li><a href="#lugar">Recepción</a></li>
+                            <li><a href="#video-bg">Lugar</a></li>
                         </ul>
                         <ul class="member-actions">
-                            <li><a href="#map" class="login">Dirección</a></li>
                             <li><a href="#rsvp" class="btn-white btn-small">Asistencia</a></li>
                         </ul>
                     </nav>
@@ -65,22 +80,22 @@
             </div>
         </header>
     </section>
-    <div class="container">
-        <div class="row">
+    <div class="container video-section">
+        <video autoplay muted loop id="video-fondo">
+            <source src="../img/Couple4-min.mp4" type="video/mp4">
+        </video>
+        <div class="row" >
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="hero-content text-center">
-                    <!--<h1>Ram and Antara</h1>-->
-                    <img src="img/logo-lg-valen&ribe-completo2.png">
-                    <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
-                    <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
+                    
+                    <!-- <a href="#rsvp" class="btn btn-accent btn-large rsvp-btn">Responder Invitación</a> -->
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 hidden-xs"></div>
-            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
-                                                           class="btn btn-accent btn-large rsvp-btn">Responder Invitación</a></div>
-            <div class="col-sm-4 hidden-xs"></div>
+            <div class="col-sm-4 align-self-end"></div>
+            <div class="col-sm-4  text-center"></div>
+            <div class="col-sm-4 "></div>
         </div>
     </div>
     <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
@@ -98,10 +113,7 @@
                     15 de Junio del 2024
                     <br>
                     San Felipe, Gto            
-                    <br>                        
-                        <strong>Ceremonia:</strong> 4:30 pm 
-                        <br>
-                        <strong>Recepción:</strong> 6:00 pm
+                    <br>                       
                 </p>
 
                
@@ -111,64 +123,72 @@
 </section>
 
 
-<section id="video-bg" class="hidden-sm hidden-xs">
-    <div id="bgndVideo" class="player"
-         data-property="{videoURL:'https://youtu.be/8bUoeEvCmxE',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:30, stopAt:115, opacity:1}">
-    </div>
+<section id="video-bg" class="">
     <div id="video-content">
-        <h5>San Felipe</h5>
-        <p>Guanajuato</p>
+        <h5>¿Dónde y Cuándo?</h5>
     </div>
 </section>
-
-<section id="map" class="section-padding">
+<section id="ceremonia" class="section-padding" style="background-color:whitesmoke;">
+    <div class="ceremonia-info text-center">
+        <h2>Ceremonia</h2>
+        <div class="imagen-responsive">
+            <img src="/img/Parroquia.jpg" >
+        </div>
+        
+        <h4>15 de junio 2024 | 4:00 pm</h4>
+        <h4>Parroquia de San Felipe Apóstol</h4>
+        <h4>Juárez S/N, Centro, 37600 San Felipe, Gto.</h4>
+        <a href="#mapIglesia" class="btn btn-accent btn-large rsvp-btn">Ver en mapa</a></div>
+    </div>
+</section>
+<section id="mapIglesia" class="section-padding">
     <div class="text-center">
         <h3>¿Cómo llego hasta allá?</h3>
         <p>Es más fácil de lo que crees!</p>
     </div>
     <div id="map-canvas">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14850.965537883245!2d-101.21117043803866!3d21.478661757206165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842afd7e2a3a85b9%3A0x95f60961f503cc9d!2sChencho&#39;s!5e0!3m2!1ses-419!2smx!4v1707715796618!5m2!1ses-419!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2083.7152299563954!2d-101.21572714562086!3d21.477991255283897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b027bb48579fd%3A0x156b24179d9335b!2sParroquia%20de%20San%20Felipe%20Ap%C3%B3stol!5e0!3m2!1ses-419!2smx!4v1709247903918!5m2!1ses-419!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
-    <div id="map-content-wrapper" class="container pointer-events-none">
-        <div class="row">
-            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
-                <div class="text-center">
-                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
-                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Ver Información
-                    </div>
-                </div>
-                <div id="map-content" class="pointer-events-auto">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h5>Huerta de Chencho</h5>
-                            <p>Lerdo de Tejada</p>
-                        </div>
-                        <div class="col-md-6">
-                            <h5>Detalles</h5>
-                            <p>
-                                Calle Allende despues de pasar el imss a mano izquierda
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row text-center">
-                        <div  style="padding: 5px;">
-                            <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Ver mapa
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    
+</section>
+<section id="lugar" class="section-padding"style="background-color:whitesmoke;">
+    <div class="ceremonia-info text-center">
+        <h2>Recepción</h2>
+        <div class="imagen-responsive">
+            <img src="/img/Chenchos.jpeg" >
+        </div>
+        
+        <h4>15 de junio 2024 | 5:30 pm</h4>
+        <h4>Chencho's</h4>
+        <h4>Lerdo de Tejada 126, 37600 San Antonio, Gto.</h4>
+        <a href="#mapCH" class="btn btn-accent btn-large rsvp-btn">Ver en mapa</a></div>
+    </div>
+</section>
+<section id="mapCH" class="section-padding"style="background-color:whitesmoke;">
+    <div class="text-center">
+        <h3>¿Cómo llego hasta allá?</h3>
+        <p>Es más fácil de lo que crees!</p>
+    </div>
+    <div id="map-canvas">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9912.015934788797!2d-101.20966351113792!3d21.475933999338245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842afd7e2a3a85b9%3A0x95f60961f503cc9d!2sChencho&#39;s!5e0!3m2!1ses-419!2smx!4v1709248342494!5m2!1ses-419!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    
+</section>
+<section id="lugar" class="section-padding"style="background-color:whitesmoke;">
+    <div class="ceremonia-info text-center">
+        <h2>Programa</h2>
+        <div class="imagen-responsive">
+            <img src="/img/Programa.png" >
         </div>
     </div>
 </section>
-
 <section class="rsvp text-center" id="rsvp">
 
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog" >
+        <div class="modal-dialog" role="document" >
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="location.reload()"><span>&times;</span>
                     </button>
                     <div class="section-padding">
                         <h3>Gracias!</h3>
@@ -180,66 +200,29 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div class="container">
+    <div class="container d-flex justify-content-center align-items-center"">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>Confirma tu asistencia</h3>
-                <p>Agradeceríamos nos pudieses indicar si podrás asistir antes del 15 de Mayo. Recuerda que es un evento totalmente familiar, asi que te agradeceriamos que solo confirmes el lugar de personas de la familia </p>
-                <p>Esto es para poder brindar una experiecia a nuestras familias </p>
+                <p>Agradeceríamos que en este momento tan importante nos compañaran nuestros seres queridos más cercanos. Nos encantaría contar con su valiosa presencia y la de su familia, confirmar su asistencia antes del 15 de mayo</p>
                 <form id="rsvp-form" class="rsvp-form gform "
                       action=""
                       method="POST">
                     <div class="row container d-flex justify-content-center align-items-center" >
-                       
                         <div class="col-md-6 col-sm-6">
-                                <label id="resultado" style="color: aliceblue;"></label>
-
-                            
+                                <label id="resultado" style="color: aliceblue;"></label> 
+                                <label id="botonenviar" style="color: aliceblue;"></label>   
                         </div>
-                        
                     </div>
-                    <div class="row container d-flex justify-content-center align-items-center" >
-                        <label id="resultado" style="color: aliceblue;"></label>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="Email" class=""
-                                                                     placeholder="Tu email"
-                                                                     required>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="row container d-flex justify-content-center align-items-center">
-                        <div class="col-md-6 col-sm-6">
-                            <div style="margin-bottom:1em">
-                                <input name="Asistencia"  type="radio" value="si"> Sí asistiré
-                                <br>
-                                <input name="Asistencia" type="radio" value="no"> No podré asistir
-                            </div>
-                        </div>
-                        <!-- <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
-                            </div>
-                        </div> -->
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                       Enviar
-                    </button>
+                     
                 </form>
+                <p>Si necesitas modificar cualquier información sobre número de invitados o cualquier comentario extra favor de comunicarse con cualquiera de los novios</p>
             </div>
         </div>
     </div>
 </section>
 
-<section id="eng-pics" class="section-padding">
+<!-- <section id="eng-pics" class="section-padding">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -314,17 +297,17 @@
                 <div class="col-xs-12 section-border section-padding"></div>
             </div>
         </div>
-        <!--<div class="row">
+        <div class="row">
             <div class="col-md-12">
                 <div class="diamond floating-logo">
                     <img src="img/sketch-logo.png" alt="Sketch Logo">
                     <div class="ring"></div>
                 </div>
             </div>
-        </div>-->
-    </section>
+        </div>
+    </section> -->
 
-<section id="instagram" class="section-padding">
+<!-- <section id="instagram" class="section-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -338,9 +321,9 @@
                 </div>
             </div>
         </div>
-</section>
+</section> -->
 
-<section class="events section-padding" id="events">
+<!-- <section class="events section-padding" id="events">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -350,7 +333,7 @@
             </div>
         </div>
     
-    </section>
+    </section> -->
 
 <footer>
     <div class="container">

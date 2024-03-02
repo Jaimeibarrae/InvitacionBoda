@@ -22,13 +22,18 @@
               <h1 class="h4">Nuevo Invitado</h1>
 
               <form id="task-form">
-                <label for="title">Familia:</label>
+                <label for="tipo">Tipo invitado:</label>
+                <select class="form-control" id="tipo" name="tipo">
+                    <option value="Invitado">Invitado</option>
+                    <option value="Familia">Familia</option>
+                </select>
+                <label for="title">Nombre:</label>
                 <input
                   type="text"
                   id="familia"
                   class="form-control mb-3"
                   class="My First Title"
-                  placeholder="Familia"
+                  placeholder="invitado"
                   autofocus
                 />
                 <label for="title">Numero Invitados:</label>
@@ -47,7 +52,12 @@
                   placeholder="Mesa"
                   autofocus
                 />
-
+                <label for="title">Asistencia:</label>
+                <select class="form-control" id="asis" name="asis">
+                  <option value="1">Si</option>
+                  <option value="2">No</option>
+                  <option value="3">Puede ser..</option>
+                </select>
                 <button class="btn btn-primary" id="btn-task-form">Save</button>
               </form>
             </div>

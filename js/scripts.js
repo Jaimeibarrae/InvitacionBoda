@@ -161,8 +161,6 @@ $(document).ready(function () {
         share_bar[i].style.display = 'inline-block';
     } */
 
-    /********************** Embed youtube video *********************/
-    $('.player').YTPlayer();
 
 
     /********************** Toggle Map Content **********************/
@@ -208,24 +206,7 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
-
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Sólo un momento!</strong> Estamos verificando tus detalles.'));
-
-            $.post('https://script.google.com/macros/s/AKfycbx4mESoZSSk4VXo-7yUDQYFXjQW5BHz2AMtmISSrA/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html('');
-                    $('#rsvp-modal').modal('show');
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Lo sentimos!</strong> Hubo un problema con el servidor. '));
-                });
-
-    });
+   
 
 });
 

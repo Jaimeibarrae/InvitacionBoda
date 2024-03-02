@@ -357,7 +357,7 @@
 
 @media screen and (max-width: 320px) {
     .hero .hero-content {
-        padding-top: 130%;
+        padding-top: 10%;
     }
 
     .rsvp {

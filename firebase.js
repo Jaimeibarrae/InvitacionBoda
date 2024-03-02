@@ -36,8 +36,8 @@ export const db = getFirestore();
  * @param {string} title the title of the Task
  * @param {string} description the description of the Task
  */
-export const saveTask = (familia, invitados,mesa) =>
-  addDoc(collection(db, "invitados"), { familia, invitados, mesa });
+export const saveTask = (familia, invitados,mesa,tipo,asis) =>
+  addDoc(collection(db, "invitados"), { familia, invitados, mesa,tipo,asis });
 
 export const onGetTasks = (callback) =>
   onSnapshot(collection(db, "invitados"), callback);
@@ -49,7 +49,7 @@ export const onGetTasks = (callback) =>
 export const deleteTask = (id) => deleteDoc(doc(db, "invitados", id));
 export const getTask = async (title) => {
   try {
-      const docRef = doc(db, "tasks", title);
+      const docRef = doc(db, "invitados", title);
       const docSnap = await getDoc(docRef);
       if (docSnap.exists()) {
           return docSnap.data();
@@ -72,7 +72,12 @@ export const getTaskByTitle = async (title) => {
       const tasks = [];
       // Itera sobre los documentos encontrados y los agrega al arreglo
       querySnapshot.forEach((doc) => {
-          tasks.push(doc.data());
+        // Obtiene el ID del documento
+        const docId = doc.id;
+        // Obtiene los datos del documento
+        const docData = doc.data();
+        // Agrega los datos y el ID al arreglo de resultados
+        tasks.push({ id: docId, data: docData });
       });
       return tasks;
   } catch (error) {
@@ -83,7 +88,7 @@ export const getTaskByTitle = async (title) => {
 
 
 export const updateTask = (id, newFields) =>
-  updateDoc(doc(db, "tasks", id), newFields);
+  updateDoc(doc(db, "invitados", id), newFields);
 
 export const getTasks = () => getDocs(collection(db, "tasks"));
 export const getAllTasks = async () => {
@@ -102,3 +107,25 @@ export const getAllTasks = async () => {
       return null;
   }
 };
+
+export const updateTaskByTitle = async (familia, newData) =>{
+  try {
+      // Realiza la consulta para buscar el documento con el título proporcionado
+      const docRef1 = await getTaskByTitle(familia);
+      const querySnapshot = await getDocs(collection(db, "invitados"));
+
+      // Verifica si se encontró un documento con el título
+      if (querySnapshot.empty) {
+          console.log("No se encontraron documentos con el título:", familia);
+          return null;
+      }
+
+      // Actualiza el primer documento encontrado (asumiendo que no hay duplicados de títulos)
+      const docRef = querySnapshot.docs[0].ref;
+      updateDoc(docRef, newData);
+      console.log("Registro actualizado correctamente");
+  } catch (error) {
+      console.error("Error al actualizar el registro:", error);
+      return null;
+  }
+}
