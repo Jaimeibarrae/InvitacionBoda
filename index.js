@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     <p>No. invitados: ${task.invitados}</p>
     <p>Mesa: ${task.mesa}</p>
     <p>Asistecia: ${asist}</p>
-    <p>Invitacion:<a href="https://e510-2806-264-2440-2ca-38b8-f994-bcee-354e.ngrok-free.app/Invitacion.html?fun&fam=${task.familia}">https://e510-2806-264-2440-2ca-38b8-f994-bcee-354e.ngrok-free.app/Invitacion.html?fun&fam=${task.familia}</a></p>
+    <p>Invitacion:<a href="https://jaimeibarrae.github.io/InvitacionBoda/Invitacion.html?fun&fam=${task.familia}">https://e510-2806-264-2440-2ca-38b8-f994-bcee-354e.ngrok-free.app/Invitacion.html?fun&fam=${task.familia}</a></p>
     <div>
       <button class="btn btn-primary btn-delete" data-id="${doc.id}">
         🗑 Eliminar
