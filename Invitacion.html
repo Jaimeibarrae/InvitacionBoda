@@ -19,19 +19,19 @@
     <meta property="og:image" content="https://github.com/JotaRaffalli/boda-prima/blob/master/img/eng_pics/Valen%26Ribe/eng3.JPG">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="./image/png" sizes="32x32" href="./img/logohref.png">
-    <link rel="icon" type="./image/png" sizes="16x16" href="./img/logohref.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/logohref.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/logohref.png">
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="./css/normalize.min.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/jquery.fancybox.css">
-    <link rel="stylesheet" href="./css/flexslider.css">
-    <link rel="stylesheet" href="./css/styles.min.css">
-    <link rel="stylesheet" href="./css/queries.css">
-    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
-    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
-    <script src="./js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <style>
         .imagen-responsive {
             max-width: 100%; /* La imagen no será más ancha que el contenedor */
@@ -47,7 +47,6 @@
         #bottom-div {
             align-self: flex-end;
         }
-
         .navbar {
             position: fixed;
             width: 100%;
@@ -57,19 +56,20 @@
         }
 
         .navbar.scrolled {
-            background-color: purple;
+            background-color: rgba(128, 0, 128, 0.8); /* Color morado translúcido */
         }
 
         .navbar-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            padding: 30px 20px;
         }
 
         .navbar-logo {
             color: white;
             font-size: 1.2rem;
+
         }
 
         .navbar-links {
@@ -111,11 +111,11 @@
                 display: flex;
                 flex-direction: column;
                 position: absolute;
-                top: 60px; /* ajusta según la altura de tu navbar */
+                top: 80px; /* ajusta según la altura de tu navbar */
                 left: 0;
                 background-color: purple;
                 width: 100%;
-                padding: 10px 20px;
+                padding: 30px 20px;
             }
 
             .navbar-links.active a {
@@ -123,11 +123,7 @@
             }
         }
 
-        .content {
-            margin-top: 80px; /* Ajusta según la altura de tu navbar */
-            padding: 20px;
-            height: 2000px; /* Para simular contenido de la página */
-        }
+        
     </style>
 </head>
 <body id="top">
@@ -136,32 +132,17 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 <section class="hero" >
-    
-    <section class="navigation">
-        <header>
-            <div class="header-content">
-                <div class="logo"><a href="#"><img src="./img/logohref.png" alt="Logo"></a></div>
-                <div >
-                    <nav class="navbar" id="navbar">
-                         <div class="navbar-container">
-                            <div class="navbar-logo">Logo</div>
-                                <div class="navbar-links">
-                                    <!-- <li><a href="#intro">Cómo nos con</a></li> -->
-                                    <!-- <li><a href="#events">Events</a></li> -->
-                                    <li><a href="#ceremonia">Ceremonia</a></li>
-                                    <li><a href="#lugar">Recepción</a></li>
-                                    <li><a href="#video-bg">Lugar</a></li>
-                                </div>
-                            <div class="navbar-icon" id="navbar-icon">&#9776;</div>
+                <nav class="navbar" id="navbar">
+                    <div class="navbar-container">
+                        <div class="navbar-logo"><a href="#"><img src="./img/logohref.png" alt="Logo" style="width: 150px; height: 50px;"></a></div>
+                        <div class="navbar-links">
+                            <a href="#ceremonia">Ceremonia</a>
+                            <a href="#lugar">Recepción</a>
+                            <a href="#programa">Programa</a>
                         </div>
-                    </nav>
-                </div>
-                <div class="navicon">
-                    <a class="nav-toggle" href="#"><span></span></a>
-                </div>
-            </div>
-        </header>
-    </section>
+                        <div class="navbar-icon" id="navbar-icon">&#9776;</div>
+                    </div>
+                </nav>
     <div class="container video-section">
         <video autoplay muted loop id="video-fondo">
             <source src="./img/Couple4-min.mp4" type="video/mp4">
@@ -229,7 +210,7 @@
         <p>Es más fácil de lo que crees!</p>
     </div>
     <div id="map-canvas">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2083.7152299563954!2d-101.21572714562086!3d21.477991255283897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b027bb48579fd%3A0x156b24179d9335b!2sParroquia%20de%20San%20Felipe%20Ap%C3%B3stol!5e0!3m2!1ses-419!2smx!4v1709247903918!5m2!1ses-419!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3712.462318541331!2d-101.2270868!3d21.489604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842afd9288971509%3A0xdf0d774825386593!2sTemplo%20de%20la%20Virgen%20de%20San%20Juan!5e0!3m2!1ses-419!2smx!4v1710802332294!5m2!1ses-419!2smx" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
     
 </section>
@@ -256,7 +237,7 @@
     </div>
     
 </section>
-<section id="lugar" class="section-padding"style="background-color:whitesmoke;">
+<section id="programa" class="section-padding"style="background-color:whitesmoke;">
     <div class="ceremonia-info text-center">
         <h2>Programa</h2>
         <div class="imagen-responsive">
@@ -427,35 +408,35 @@
         </div>
     </div>
 </footer>
- <script>
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const navbarIcon = document.getElementById('navbar-icon');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-                navbarIcon.classList.remove('white');
-            } else {
-                navbar.classList.remove('scrolled');
-                navbarIcon.classList.add('white');
-            }
-        });
-
+<script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
         const navbarIcon = document.getElementById('navbar-icon');
-        const navbarLinks = document.querySelector('.navbar-links');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+            navbarIcon.classList.remove('white');
+        } else {
+            navbar.classList.remove('scrolled');
+            navbarIcon.classList.add('white');
+        }
+    });
 
-        navbarIcon.addEventListener('click', function() {
-            navbarLinks.classList.toggle('active');
-        });
-    </script>
+    const navbarIcon = document.getElementById('navbar-icon');
+    const navbarLinks = document.querySelector('.navbar-links');
+
+    navbarIcon.addEventListener('click', function() {
+        navbarLinks.classList.toggle('active');
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-<script src="./js/jquery.fancybox.pack.js"></script>
-<script src="./js/vendor/bootstrap.min.js"></script>
-<script src="./js/jquery.flexslider-min.js"></script>
-<script src="./js/jquery.mb.YTPlayer.min.js"></script>
-<script src="./node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
-<script src="./js/vendor/ouical.js"></script>
-<script src="./js/scripts.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="js/vendor/ouical.js"></script>
+<script src="js/scripts.js"></script>
 <script src="./Invitacion.js" type="module"></script>
 </body>
 </html>
