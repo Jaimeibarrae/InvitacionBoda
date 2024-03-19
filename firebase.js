@@ -36,7 +36,7 @@ export const db = getFirestore();
  * @param {string} title the title of the Task
  * @param {string} description the description of the Task
  */
-export const saveTask = (familia, invitados,mesa,tipo,asis) =>
+export const saveTask = (familia, invitados,tipo) =>
   addDoc(collection(db, "invitados"), { familia, invitados, tipo });
 
 export const onGetTasks = (callback) =>
