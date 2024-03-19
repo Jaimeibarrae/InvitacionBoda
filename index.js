@@ -19,27 +19,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   onGetTasks((querySnapshot) => {
     tasksContainer.innerHTML = "";
     querySnapshot.forEach((doc) => {
-      const task = doc.data();
-      var asist = "";
-      switch (task.asis) {
-        case "1":
-          asist = "Si"
-          break;
-        case "2":
-          asist = "No"
-          break;
-        case "3":
-          asist = "Puede ser.."
-          break;
-        default:
-          break;
-      }
+      
       tasksContainer.innerHTML += `
       <div class="card card-body mt-2 border-primary">
     <h3 class="h5">${task.tipo}: ${task.familia}</h3>
     <p>No. invitados: ${task.invitados}</p>
-    <p>Mesa: ${task.mesa}</p>
-    <p>Asistecia: ${asist}</p>
     <p>Invitacion:<a href="https://jaimeibarrae.github.io/InvitacionBoda/Invitacion.html?fun&fam=${task.familia}">https://jaimeibarrae.github.io/InvitacionBoda/Invitacion.html?fun&fam=${task.familia}</a></p>
     <div>
       <button class="btn btn-primary btn-delete" data-id="${doc.id}">
@@ -88,21 +72,17 @@ taskForm.addEventListener("submit", async (e) => {
   
   const familia = taskForm["familia"];
   const invitados = taskForm["invitados"];
-  const mesa = taskForm["mesa"];
   const tipoInv = taskForm["tipo"];
-  const asis = taskForm["asis"];
 
   try {
     if (!editStatus) {
-      await saveTask(familia.value, invitados.value, mesa.value, tipoInv.value,asis.value);
+      await saveTask(familia.value, invitados.value, tipoInv.value);
     } else {
       id = familia.getAttribute('data-id');
       await updateTask(id, {
         familia: familia.value,
         invitados: invitados.value,
-        mesa: mesa.value,
         tipoInv : tipoInv.value,
-        asis:asis.value,
       });
 
       editStatus = false;
