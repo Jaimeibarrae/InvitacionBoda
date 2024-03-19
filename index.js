@@ -23,7 +23,6 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       tasksContainer.innerHTML += `
       <div class="card card-body mt-2 border-primary">
     <h3 class="h5">${task.tipo}: ${task.familia}</h3>
-    <p>No. invitados: ${task.invitados}</p>
     <p>Invitacion:<a href="https://jaimeibarrae.github.io/InvitacionBoda/Invitacion.html?fun&fam=${task.familia}">https://jaimeibarrae.github.io/InvitacionBoda/Invitacion.html?fun&fam=${task.familia}</a></p>
     <div>
       <button class="btn btn-primary btn-delete" data-id="${doc.id}">
@@ -54,7 +53,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
         try {
           const doc = await getTask(e.target.dataset.id);
           taskForm["familia"].value = doc.familia;
-          taskForm["mesa"].value = doc.mesa;
+         
           taskForm["familia"].setAttribute('data-id', e.target.dataset.id);
           editStatus = true;
           id = doc.id;
