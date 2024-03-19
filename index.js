@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   onGetTasks((querySnapshot) => {
     tasksContainer.innerHTML = "";
     querySnapshot.forEach((doc) => {
-      
+      const task = doc.data();
       tasksContainer.innerHTML += `
       <div class="card card-body mt-2 border-primary">
     <h3 class="h5">${task.tipo}: ${task.familia}</h3>
