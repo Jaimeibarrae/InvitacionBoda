@@ -32,29 +32,8 @@ function invi(parametro1) {
               // Agregar los elementos al contenedor
               container.appendChild(titleElement);
               container.appendChild(invitadosElement);
-              container.appendChild(descriptionElement);
-              const le = task.data["asis"];
-              if(task.data["asis"] =='2' || task.data["asis"]=='3'){
-                btn.innerHTML =
-                `<div class="row container d-flex justify-content-center align-items-center">
-                  <div class="col-md-6 col-sm-6">
-                    <div style="margin-bottom:1em">
-                        <p>Confirma tu asistencia aqui:</p>
-                        <select class="form-control" id="asis" name="asis"  data-id="${task.id}">
-                            <option value="1">Si</option>
-                            <option value="2">No</option>
-                            <option value="3">Puede ser..</option>
-                        </select>
-                  </div>
-                </div>
-                </div><button class="btn-fill rsvp-btn" id="btn-update">Enviar</button>`;
-                document.getElementById("asis").value = task.data["asis"];
+              //container.appendChild(descriptionElement);
                 
-              }else{
-                const asistencia = document.createElement('p');
-                asistencia.textContent = "Asistencia: Si" ;
-                container.appendChild(asistencia);
-              }
 
               
 
