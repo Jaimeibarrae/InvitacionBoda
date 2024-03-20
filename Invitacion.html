@@ -33,6 +33,24 @@
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <style>
+        #btn-up {
+            display: none; /* Por defecto, oculto */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: pink; /* Color de fondo rosa */
+            border: none;
+            border-radius: 50%; /* Hace que el botón sea circular */
+            width: 50px; /* Ancho del botón */
+            height: 50px; /* Alto del botón */
+            cursor: pointer;
+            z-index: 9999;
+        }
+        /* Estilo para el ícono de flecha */
+        #btn-up i {
+            color: palevioletred; /* Color rosa */
+            font-size: 32px;
+        }
         .imagen-responsive {
             max-width: 100%; /* La imagen no será más ancha que el contenedor */
             height: auto; /* La altura se ajusta automáticamente para mantener la relación de aspecto */
@@ -400,10 +418,14 @@
 
 <footer>
     <div class="container">
+        <button id="btn-up" onclick="goToTop()">
+            <i class="fa fa-angle-up"></i><!-- Utiliza un ícono de flecha hacia arriba -->
+         </button>
         <div class="row">
             <div class="col-sm-12 text-center content">
-                <span class="to-top-wrapper"><a href="#navbar" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                <!-- <span class="to-top-wrapper"><a href="#top" class="to-top"><</a></span> -->
                 
+                <h5>Creado por : JaimeIbarra</h5>
             </div>
         </div>
     </div>
@@ -427,6 +449,21 @@
     navbarIcon.addEventListener('click', function() {
         navbarLinks.classList.toggle('active');
     });
+    window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("btn-up").style.display = "block";
+            } else {
+                document.getElementById("btn-up").style.display = "none";
+            }
+        }
+
+        // Función para desplazarse al inicio de la página cuando se hace clic en el botón
+        function goToTop() {
+            document.body.scrollTop = 0; // Para navegadores que no sean Firefox
+            document.documentElement.scrollTop = 0; // Para Firefox
+        }
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
